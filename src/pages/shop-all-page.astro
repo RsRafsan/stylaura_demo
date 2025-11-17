@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import WhatsAppFloatingButton from '@/components/common/WhatsAppFloatingButton.tsx'
+import ShopAllPage from '@/components/shop-all-page/ShopAllPage.tsx'
+---
+
+<BaseLayout title="Shop All - Stylaura">
+  <CommonHeader client:load />
+  <main class="min-h-screen bg-background">
+    <ShopAllPage client:load />
+  </main>
+  <CommonFooter client:idle />
+  <WhatsAppFloatingButton client:idle phoneNumber="1234567890" message="Hi! I'm interested in your products." />
+</BaseLayout>

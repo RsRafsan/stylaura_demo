@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import WhatsAppFloatingButton from '@/components/common/WhatsAppFloatingButton.tsx'
+import CategoryLehengas from '@/components/category-lehengas/CategoryLehengas.tsx'
+---
+
+<BaseLayout title="Lehengas - Stylaura | Premium Women's Fashion">
+  <CommonHeader client:load />
+  <main class="min-h-screen flex flex-col">
+    <CategoryLehengas client:load />
+  </main>
+  <CommonFooter client:idle />
+  <WhatsAppFloatingButton client:idle phoneNumber="1234567890" message="Hi! I'm interested in your Lehenga collection. Can you help me?" />
+</BaseLayout>

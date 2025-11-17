@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import WhatsAppFloatingButton from '@/components/common/WhatsAppFloatingButton.tsx'
+import BagsCategoryPage from '@/components/category-bags/BagsCategoryPage.tsx'
+---
+
+<BaseLayout title="Bags - Stylaura | Premium Women's Fashion">
+  <CommonHeader client:load />
+  <main class="min-h-screen flex flex-col">
+    <BagsCategoryPage client:idle />
+  </main>
+  <CommonFooter client:idle variant="full" />
+  <WhatsAppFloatingButton client:idle phoneNumber="8801234567890" message="Hi! I'm interested in your bags collection. Can you help me?" />
+</BaseLayout>

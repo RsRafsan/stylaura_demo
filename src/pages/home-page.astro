@@ -1,0 +1,27 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import WhatsAppFloatingButton from '@/components/common/WhatsAppFloatingButton.tsx'
+import HeroBanner from '@/components/home-page/HeroBanner.tsx'
+import CategoriesSection from '@/components/home-page/CategoriesSection.tsx'
+import NewArrivalsSection from '@/components/home-page/NewArrivalsSection.tsx'
+import TestimonialsSection from '@/components/home-page/TestimonialsSection.tsx'
+import NewsletterSection from '@/components/home-page/NewsletterSection.tsx'
+---
+
+<BaseLayout title="Stylaura - Premium Women's Fashion | Lehengas, Bags & Festive Wear">
+  <CommonHeader client:load />
+  
+  <main class="flex flex-col min-h-screen">
+    <HeroBanner client:idle />
+    <CategoriesSection client:idle />
+    <NewArrivalsSection client:idle />
+    <TestimonialsSection client:idle />
+    <NewsletterSection client:idle />
+  </main>
+
+  <CommonFooter client:idle variant="full" />
+  <WhatsAppFloatingButton client:idle phoneNumber="8801234567890" message="Hello! I'm interested in Stylaura products. Can you help me?" />
+</BaseLayout>

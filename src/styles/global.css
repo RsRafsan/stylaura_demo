@@ -1,0 +1,118 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Soft luxury color palette - Beige, Off-white, Gold, Black */
+    --background: 40 10% 98%; /* Off-white #FAFAF8 */
+    --foreground: 0 0% 10%; /* Black #1A1A1A */
+    
+    --card: 0 0% 100%; /* Pure white for cards */
+    --card-foreground: 0 0% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    
+    --primary: 43 65% 52%; /* Gold #D4AF37 */
+    --primary-foreground: 0 0% 100%; /* White text on gold */
+    
+    --secondary: 40 20% 93%; /* Beige #F5F1E8 */
+    --secondary-foreground: 0 0% 10%;
+    
+    --muted: 40 15% 95%; /* Lighter beige for muted elements */
+    --muted-foreground: 0 0% 40%; /* Medium gray for muted text */
+    
+    --accent: 43 65% 52%; /* Gold accent, same as primary */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 72% 51%; /* Red for errors */
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 40 15% 88%; /* Soft beige border */
+    --input: 40 15% 88%; /* Same as border for consistency */
+    --ring: 43 65% 52%; /* Gold focus ring */
+    
+    --radius: 0.375rem; /* 6px - subtle rounded corners */
+    
+    /* Custom shadows for soft luxury feel */
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.03);
+    
+    /* Chart colors (for potential analytics/reviews) */
+    --chart-1: 43 65% 52%; /* Gold */
+    --chart-2: 40 20% 93%; /* Beige */
+    --chart-3: 0 0% 10%; /* Black */
+    --chart-4: 40 15% 95%; /* Light beige */
+    --chart-5: 0 0% 40%; /* Gray */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+  
+  /* Typography enhancements for Apple-like readability */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    letter-spacing: -0.015em;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+    letter-spacing: -0.01em;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply text-base leading-relaxed;
+  }
+  
+  /* Smooth transitions for interactive elements */
+  a, button {
+    @apply transition-colors duration-200;
+  }
+  
+  /* Focus styles for accessibility */
+  a:focus-visible, button:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+}
+
+@layer utilities {
+  /* Custom gradient utilities for premium feel */
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(43 55% 45%) 100%);
+  }
+  
+  .gradient-beige {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(40 25% 96%) 100%);
+  }
+  
+  /* Text gradient for premium headings */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-primary to-[hsl(43_55%_45%)] bg-clip-text text-transparent;
+  }
+}

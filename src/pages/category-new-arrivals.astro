@@ -1,0 +1,25 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import WhatsAppFloatingButton from '@/components/common/WhatsAppFloatingButton.tsx'
+import NewArrivalsPage from '@/components/category-new-arrivals/NewArrivalsPage.tsx'
+import { getProductsBySlug } from '@/data/products'
+
+// Fetch new arrivals at compile time
+const newArrivals = getProductsBySlug('new-arrivals')
+---
+
+<BaseLayout title="New Arrivals - Stylaura | Premium Women's Fashion">
+  <div class="flex flex-col min-h-screen bg-background">
+    <CommonHeader client:load />
+    
+    <main class="flex-1">
+      <NewArrivalsPage client:idle products={newArrivals} />
+    </main>
+    
+    <CommonFooter client:idle variant="full" />
+    <WhatsAppFloatingButton client:idle phoneNumber="1234567890" message="Hi! I'm interested in your new arrivals at Stylaura." />
+  </div>
+</BaseLayout>
